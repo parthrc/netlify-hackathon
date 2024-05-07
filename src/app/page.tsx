@@ -23,6 +23,8 @@ export default function Home() {
   const { imageUrl, updateUrl, removeUrl } = useCurrentImageStore();
   console.log("START:", imageUrl);
 
+  const netlifyImageUrl = `https://master--polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
+
   const { edgestore } = useEdgeStore();
 
   // Current file state
@@ -89,9 +91,9 @@ export default function Home() {
         </div>
       </div>
 
-      <IphoneMockup imageUrl={imageUrl} />
-      <TabletMockup imageUrl={imageUrl} />
-      <DesktopMockup imageUrl={imageUrl} />
+      <IphoneMockup imageUrl={netlifyImageUrl} />
+      <TabletMockup imageUrl={netlifyImageUrl} />
+      <DesktopMockup imageUrl={netlifyImageUrl} />
     </div>
   );
 }
