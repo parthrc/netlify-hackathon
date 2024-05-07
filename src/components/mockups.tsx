@@ -11,7 +11,7 @@ export default function Mockups() {
   const netlifyImageUrl = `https://master--polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
 
   return (
-    <div className="flex border-4  border-black  w-full relative py-8">
+    <div className="flex w-full relative bg-pink-300 h-[600px]">
       <IphoneMockup
         imageUrl={netlifyImageUrl}
         style="top-[310px] absolute right-[100px] z-[99999]"
@@ -20,7 +20,7 @@ export default function Mockups() {
         imageUrl={netlifyImageUrl}
         style="absolute right-[250px] top-[220px] z-[9999]"
       />
-      <DesktopMockup imageUrl={netlifyImageUrl} style="absolute left-[30%]" />
+      <DesktopMockup imageUrl={netlifyImageUrl} style="absolute left-[30%] top-10" />
       <LaptopMockup
         imageUrl={netlifyImageUrl}
         style="top-[280px] left-[120px] absolute"

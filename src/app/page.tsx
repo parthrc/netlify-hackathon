@@ -68,7 +68,7 @@ export default function Home() {
       <h1 className="text-3xl uppercase font-bold mb-8">Mockups Generator</h1>
 
       <div className="flex items-center gap-x-4 p-1 drop-shadow-sm gap-1">
-        {/* File preview */}
+        {/* File preview
         <div className="flex flex-col  w-[35rem] h-[20rem] relative border border-black rounded-sm">
           <Image
             src={imageUrl}
@@ -76,17 +76,27 @@ export default function Home() {
             fill
             className="object-contain "
           />
+        </div> */}
+
+        {/* File upload horizontal */}
+        <div className=" p-4 flex flex-col gap-y-2 bg-slate-200 rounded-sm">
+          <Label htmlFor="picture">Upload picture for desktops</Label>
+          <Input type="file" id="picture" onChange={handleFileUpload} />
+          <Button className="mt-2 w-fit" onClick={handleSubmit}>
+            Upload
+          </Button>
         </div>
 
-        {/* File upload input */}
+        {/* File upload vertical */}
         <div className=" p-4 flex flex-col gap-y-2 bg-slate-200 rounded-sm">
-          <Label htmlFor="picture">Upload your picture:</Label>
+          <Label htmlFor="picture">Upload picture for phones:</Label>
           <Input type="file" id="picture" onChange={handleFileUpload} />
           <Button className="mt-2 w-fit" onClick={handleSubmit}>
             Upload
           </Button>
         </div>
       </div>
+
       <Mockups />
     </div>
   );

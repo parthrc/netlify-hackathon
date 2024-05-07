@@ -9,13 +9,12 @@ export default function LaptopMockup({ imageUrl, style }: LaptopMockupProps) {
   return (
     <div className={style}>
       <div className="relative mx-auto border-gray-800  bg-gray-800 border-[8px] rounded-t-xl h-[220px] w-[350px]">
-        <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white">
-    
+        <div className="rounded-lg overflow-hidden h-[156px]  bg-white">
           <Image
             src={imageUrl}
             alt="desktop-mockup"
             fill
-            className="object-contain "
+            className="object-cover "
           />
         </div>
       </div>
