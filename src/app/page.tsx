@@ -62,27 +62,28 @@ export default function Home() {
   };
 
   return (
-    <div className="flex ma-w-screen-xl w-full border-4 border-red-400 flex-col items-center min-h-screen px-4 gap-y-4 pt-5">
-      <h1>Mockups Generator</h1>
+    <div className="mx-auto flex max-w-screen-xl w-full border-4 border-red-400 flex-col items-center min-h-screen px-4 gap-y-4 pt-5">
+      <h1 className="text-3xl uppercase font-bold mb-8">Mockups Generator</h1>
 
-      {/* File preview */}
-      <div className="flex flex-col border-2 border-black">
-        <Image
-          src={imageUrl}
-          alt="image-preview"
-          height={300}
-          width={500}
-          className="object-fit"
-        />
-      </div>
+      <div className="flex items-center gap-x-4 border-2 border-pink-400 p-1">
+        {/* File preview */}
+        <div className="flex flex-col border-2 border-black w-[35rem] h-[20rem] relative">
+          <Image
+            src={imageUrl}
+            alt="image-preview"
+            fill
+            className="object-contain "
+          />
+        </div>
 
-      {/* File upload input */}
-      <div className="border-2 border-red-300 p-2 flex flex-col gap-y-2 ">
-        <Label htmlFor="picture">Upload your pitcure:</Label>
-        <Input type="file" id="picture" onChange={handleFileUpload} />
-        <Button className="mt-2 w-fit" onClick={handleSubmit}>
-          Upload
-        </Button>
+        {/* File upload input */}
+        <div className="border-2 border-red-300 p-2 flex flex-col gap-y-2 ">
+          <Label htmlFor="picture">Upload your picture:</Label>
+          <Input type="file" id="picture" onChange={handleFileUpload} />
+          <Button className="mt-2 w-fit" onClick={handleSubmit}>
+            Upload
+          </Button>
+        </div>
       </div>
     </div>
   );
