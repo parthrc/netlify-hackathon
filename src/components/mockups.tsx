@@ -23,7 +23,7 @@ export default function Mockups() {
       <DesktopMockup imageUrl={netlifyImageUrl} style="absolute left-[30%]" />
       <LaptopMockup
         imageUrl={netlifyImageUrl}
-        style="top-[220px] left-[-20px] absolute"
+        style="top-[280px] left-[120px] absolute"
       />
     </div>
   );

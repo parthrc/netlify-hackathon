@@ -8,7 +8,7 @@ interface DesktopMockupProps {
 export default function DesktopMockup({ imageUrl, style }: DesktopMockupProps) {
   return (
     <div className={style}>
-      <div className="relative mx-auto border-gray-800  bg-gray-800 border-[16px] rounded-t-xl h-[294px] w-[512px] ">
+      <div className="relative mx-auto border-gray-800  bg-gray-800 border-[8px] rounded-t-xl h-[294px] w-[512px] ">
         <div className="rounded-xl overflow-hidden h-[140px] md:h-[262px]">
           <Image
             src={imageUrl}
