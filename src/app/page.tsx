@@ -1,4 +1,7 @@
 "use client";
+import DesktopMockup from "@/components/desktop-mockup";
+import IphoneMockup from "@/components/iphone-mockup";
+import TabletMockup from "@/components/tablet-mockup";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -62,12 +65,12 @@ export default function Home() {
   };
 
   return (
-    <div className="mx-auto flex max-w-screen-xl w-full border-4 border-red-400 flex-col items-center min-h-screen px-4 gap-y-4 pt-5">
+    <div className="mx-auto flex max-w-screen-xl w-full  flex-col items-center min-h-screen px-4 gap-y-4 pt-5">
       <h1 className="text-3xl uppercase font-bold mb-8">Mockups Generator</h1>
 
-      <div className="flex items-center gap-x-4 border-2 border-pink-400 p-1">
+      <div className="flex items-center gap-x-4 p-1 drop-shadow-sm gap-1">
         {/* File preview */}
-        <div className="flex flex-col border-2 border-black w-[35rem] h-[20rem] relative">
+        <div className="flex flex-col  w-[35rem] h-[20rem] relative border border-black rounded-sm">
           <Image
             src={imageUrl}
             alt="image-preview"
@@ -77,7 +80,7 @@ export default function Home() {
         </div>
 
         {/* File upload input */}
-        <div className="border-2 border-red-300 p-2 flex flex-col gap-y-2 ">
+        <div className=" p-4 flex flex-col gap-y-2 bg-slate-200 rounded-sm">
           <Label htmlFor="picture">Upload your picture:</Label>
           <Input type="file" id="picture" onChange={handleFileUpload} />
           <Button className="mt-2 w-fit" onClick={handleSubmit}>
@@ -85,6 +88,10 @@ export default function Home() {
           </Button>
         </div>
       </div>
+
+      <IphoneMockup imageUrl={imageUrl} />
+      <TabletMockup imageUrl={imageUrl} />
+      <DesktopMockup imageUrl={imageUrl} />
     </div>
   );
 }

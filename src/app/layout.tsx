@@ -19,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <EdgeStoreProvider>{children}</EdgeStoreProvider>
+        <EdgeStoreProvider>
+          <main className="bg-slate-50">{children}</main>
+        </EdgeStoreProvider>
         <Toaster position="bottom-left" />
       </body>
     </html>
