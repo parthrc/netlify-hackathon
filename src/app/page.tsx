@@ -1,7 +1,6 @@
 "use client";
-import DesktopMockup from "@/components/desktop-mockup";
-import IphoneMockup from "@/components/iphone-mockup";
-import TabletMockup from "@/components/tablet-mockup";
+
+import Mockups from "@/components/mockups";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -22,8 +21,6 @@ export default function Home() {
   // Current image url ZUSTAND store
   const { imageUrl, updateUrl, removeUrl } = useCurrentImageStore();
   console.log("START:", imageUrl);
-
-  const netlifyImageUrl = `https://master--polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
 
   const { edgestore } = useEdgeStore();
 
@@ -90,10 +87,7 @@ export default function Home() {
           </Button>
         </div>
       </div>
-
-      <IphoneMockup imageUrl={netlifyImageUrl} />
-      <TabletMockup imageUrl={netlifyImageUrl} />
-      <DesktopMockup imageUrl={netlifyImageUrl} />
+      <Mockups />
     </div>
   );
 }
