@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "master--polite-bienenstitch-cc3c05.netlify.app",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -1,0 +1,2 @@
+[images]
+  remote_images = ["https://edgestore.dev/.*", "https://animals.more-images.com/[bcr]at/.*"]
