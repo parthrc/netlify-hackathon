@@ -54,7 +54,7 @@ export default function Mockups() {
           />
         </div>
       </div>
-      <Button className=" w-fit" onClick={convert}>
+      <Button className=" w-fit " onClick={convert}>
         Download
       </Button>
     </>
