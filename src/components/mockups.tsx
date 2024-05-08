@@ -2,7 +2,7 @@ import { useCurrentImageStore } from "@/store";
 import DesktopMockup from "@/components/desktop-mockup";
 import IphoneMockup from "@/components/iphone-mockup";
 import TabletMockup from "@/components/tablet-mockup";
-import LaptopMockup from "./laptop-mockup";
+import LaptopMockup from "@/components/laptop-mockup";
 
 import { Button } from "./ui/button";
 import { useToPng } from "@hugocxl/react-to-image";

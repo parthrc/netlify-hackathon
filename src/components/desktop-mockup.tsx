@@ -14,7 +14,7 @@ export default function DesktopMockup({ imageUrl, style }: DesktopMockupProps) {
             src={imageUrl}
             alt="desktop-mockup"
             fill
-            className="object-contain"
+            className="object-cover"
           />
         </div>
       </div>
@@ -23,3 +23,5 @@ export default function DesktopMockup({ imageUrl, style }: DesktopMockupProps) {
     </div>
   );
 }
+
+
