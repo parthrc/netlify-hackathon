@@ -1,4 +1,4 @@
-import { useCurrentImageStore } from "@/store";
+import { useCurrentBgStore, useCurrentImageStore } from "@/store";
 import DesktopMockup from "@/components/desktop-mockup";
 import IphoneMockup from "@/components/iphone-mockup";
 import TabletMockup from "@/components/tablet-mockup";
@@ -6,6 +6,7 @@ import LaptopMockup from "@/components/laptop-mockup";
 
 import { Button } from "./ui/button";
 import { useToPng } from "@hugocxl/react-to-image";
+import { cn } from "@/lib/utils";
 
 export default function Mockups() {
   // Function save component as Image
@@ -21,10 +22,16 @@ export default function Mockups() {
   // Current image url ZUSTAND store
   const { imageUrl, updateUrl, removeUrl } = useCurrentImageStore();
 
+  // Current bg from BG store
+  const { currentBg, updateBg } = useCurrentBgStore();
+
   const netlifyImageUrl = `https://master--polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
 
   return (
-    <div ref={ref} className="bg-pink-300 h-[600px] flex w-full flex-col ">
+    <div
+      ref={ref}
+      className={cn(" h-[600px] flex w-full flex-col ", currentBg)}
+    >
       <div className="w-full relative">
         <IphoneMockup
           imageUrl={netlifyImageUrl}

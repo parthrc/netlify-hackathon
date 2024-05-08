@@ -11,3 +11,14 @@ export const useCurrentImageStore = create<CurrentImage>()((set) => ({
   updateUrl: (newUrl) => set(() => ({ imageUrl: newUrl })),
   removeUrl: () => set(() => ({ imageUrl: "" })),
 }));
+
+//Store for background
+interface CurrentBackground {
+  currentBg: string;
+  updateBg: (newBg: string) => void;
+}
+
+export const useCurrentBgStore = create<CurrentBackground>()((set) => ({
+  currentBg: "bg-green-500",
+  updateBg: (newBg) => set(() => ({ currentBg: newBg })),
+}));
