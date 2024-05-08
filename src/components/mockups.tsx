@@ -26,7 +26,7 @@ export default function Mockups() {
   const { currentBg, updateBg } = useCurrentBgStore();
 
   // create netlify Image CDN call using edgestore url
-  const netlifyImageUrl = `https://master--polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
+  const netlifyImageUrl = `https://polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
 
   return (
     <>
