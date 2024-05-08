@@ -3,11 +3,12 @@ import DesktopMockup from "@/components/desktop-mockup";
 import IphoneMockup from "@/components/iphone-mockup";
 import TabletMockup from "@/components/tablet-mockup";
 import LaptopMockup from "./laptop-mockup";
-import { MutableRefObject, Ref } from "react";
-import { useToSvg, useToPng } from "@hugocxl/react-to-image";
+
 import { Button } from "./ui/button";
+import { useToPng } from "@hugocxl/react-to-image";
 
 export default function Mockups() {
+  // Function save component as Image
   const [_, convert, ref] = useToPng<HTMLDivElement>({
     quality: 0.8,
     onSuccess: (data) => {
@@ -23,7 +24,7 @@ export default function Mockups() {
   const netlifyImageUrl = `https://master--polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
 
   return (
-    <div ref={ref} className="bg-pink-300 h-[600px] flex w-full flex-col">
+    <div ref={ref} className="bg-pink-300 h-[600px] flex w-full flex-col ">
       <div className="w-full relative">
         <IphoneMockup
           imageUrl={netlifyImageUrl}
@@ -42,7 +43,9 @@ export default function Mockups() {
           style="top-[280px] left-[120px] absolute"
         />
       </div>
-      <Button onClick={convert}>Download</Button>
+      <Button className="absolute bottom-0 left-[50%]" onClick={convert}>
+        Download
+      </Button>
     </div>
   );
 }

@@ -6,15 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useEdgeStore } from "@/lib/edgestore";
 import { useCurrentImageStore } from "@/store";
-import Image from "next/image";
-import { ChangeEvent, use, useRef, useState } from "react";
+
+import { ChangeEvent, useState } from "react";
 import { toast } from "sonner";
-import {
-  exportComponentAsJPEG,
-  exportComponentAsPDF,
-  exportComponentAsPNG,
-} from "react-component-export-image";
-import { useToSvg } from "@hugocxl/react-to-image";
 
 const ALLOWED_IMAGE_TYPES = [
   "image/webp",
@@ -103,8 +97,6 @@ export default function Home() {
       </div>
 
       <Mockups />
-
-
     </div>
   );
 }
