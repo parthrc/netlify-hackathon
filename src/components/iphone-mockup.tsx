@@ -23,7 +23,7 @@ export default function IphoneMockup({ imageUrl, style }: IphoneMockupProps) {
             src={imageUrl}
             alt="desktop-mockup"
             fill
-            className="object-contain rounded-[10px]"
+            className=" rounded-[10px]"
           />
         </div>
       </div>

@@ -28,6 +28,8 @@ export default function Mockups() {
   // create netlify Image CDN call using edgestore url
   const netlifyImageUrl = `https://polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}&q=100`;
 
+  const netlifyImageUrlMobile = `https://polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}&w=200&position=center&fit=cover`;
+
   return (
     <div className="relative w-full flex flex-col items-center gap-y-4  py-4  ">
       <Button className=" w-fit " onClick={convert}>
@@ -42,11 +44,11 @@ export default function Mockups() {
       >
         <div className="w-full relative">
           <IphoneMockup
-            imageUrl={netlifyImageUrl}
+            imageUrl={netlifyImageUrlMobile}
             style="top-[310px] absolute right-[100px] z-[99999]"
           />
           <TabletMockup
-            imageUrl={netlifyImageUrl}
+            imageUrl={netlifyImageUrlMobile}
             style="absolute right-[250px] top-[220px] z-[9999]"
           />
           <DesktopMockup
