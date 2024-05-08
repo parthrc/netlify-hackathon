@@ -1,13 +1,12 @@
 "use client";
-import DesktopMockup from "@/components/desktop-mockup";
-import IphoneMockup from "@/components/iphone-mockup";
-import TabletMockup from "@/components/tablet-mockup";
+
+import Mockups from "@/components/mockups";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useEdgeStore } from "@/lib/edgestore";
 import { useCurrentImageStore } from "@/store";
-import Image from "next/image";
+
 import { ChangeEvent, useState } from "react";
 import { toast } from "sonner";
 
@@ -21,9 +20,6 @@ const ALLOWED_IMAGE_TYPES = [
 export default function Home() {
   // Current image url ZUSTAND store
   const { imageUrl, updateUrl, removeUrl } = useCurrentImageStore();
-  console.log("START:", imageUrl);
-
-  const netlifyImageUrl = `https://master--polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
 
   const { edgestore } = useEdgeStore();
 
@@ -71,7 +67,7 @@ export default function Home() {
       <h1 className="text-3xl uppercase font-bold mb-8">Mockups Generator</h1>
 
       <div className="flex items-center gap-x-4 p-1 drop-shadow-sm gap-1">
-        {/* File preview */}
+        {/* File preview
         <div className="flex flex-col  w-[35rem] h-[20rem] relative border border-black rounded-sm">
           <Image
             src={imageUrl}
@@ -79,11 +75,20 @@ export default function Home() {
             fill
             className="object-contain "
           />
+        </div> */}
+
+        {/* File upload horizontal */}
+        <div className=" p-4 flex flex-col gap-y-2 bg-slate-200 rounded-sm">
+          <Label htmlFor="picture">Upload picture for desktops</Label>
+          <Input type="file" id="picture" onChange={handleFileUpload} />
+          <Button className="mt-2 w-fit" onClick={handleSubmit}>
+            Upload
+          </Button>
         </div>
 
-        {/* File upload input */}
+        {/* File upload vertical */}
         <div className=" p-4 flex flex-col gap-y-2 bg-slate-200 rounded-sm">
-          <Label htmlFor="picture">Upload your picture:</Label>
+          <Label htmlFor="picture">Upload picture for phones:</Label>
           <Input type="file" id="picture" onChange={handleFileUpload} />
           <Button className="mt-2 w-fit" onClick={handleSubmit}>
             Upload
@@ -91,9 +96,7 @@ export default function Home() {
         </div>
       </div>
 
-      <IphoneMockup imageUrl={netlifyImageUrl} />
-      <TabletMockup imageUrl={netlifyImageUrl} />
-      <DesktopMockup imageUrl={netlifyImageUrl} />
+      <Mockups />
     </div>
   );
 }
