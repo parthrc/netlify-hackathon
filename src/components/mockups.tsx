@@ -22,37 +22,41 @@ export default function Mockups() {
   // Current image url ZUSTAND store
   const { imageUrl, updateUrl, removeUrl } = useCurrentImageStore();
 
-  // Current bg from BG store
+  // Current bg color from ZUSTAND store
   const { currentBg, updateBg } = useCurrentBgStore();
 
+  // create netlify Image CDN call using edgestore url
   const netlifyImageUrl = `https://master--polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
 
   return (
-    <div
-      ref={ref}
-      className={cn(" h-[600px] flex w-full flex-col ", currentBg)}
-    >
-      <div className="w-full relative">
-        <IphoneMockup
-          imageUrl={netlifyImageUrl}
-          style="top-[310px] absolute right-[100px] z-[99999]"
-        />
-        <TabletMockup
-          imageUrl={netlifyImageUrl}
-          style="absolute right-[250px] top-[220px] z-[9999]"
-        />
-        <DesktopMockup
-          imageUrl={netlifyImageUrl}
-          style="absolute left-[30%] top-10"
-        />
-        <LaptopMockup
-          imageUrl={netlifyImageUrl}
-          style="top-[280px] left-[120px] absolute"
-        />
+    <>
+      <div
+        ref={ref}
+        className={cn(" h-[600px] flex w-full flex-col ")}
+        style={{ backgroundColor: currentBg }}
+      >
+        <div className="w-full relative">
+          <IphoneMockup
+            imageUrl={netlifyImageUrl}
+            style="top-[310px] absolute right-[100px] z-[99999]"
+          />
+          <TabletMockup
+            imageUrl={netlifyImageUrl}
+            style="absolute right-[250px] top-[220px] z-[9999]"
+          />
+          <DesktopMockup
+            imageUrl={netlifyImageUrl}
+            style="absolute left-[30%] top-10"
+          />
+          <LaptopMockup
+            imageUrl={netlifyImageUrl}
+            style="top-[280px] left-[120px] absolute"
+          />
+        </div>
       </div>
-      <Button className="absolute bottom-0 left-[50%]" onClick={convert}>
+      <Button className=" w-fit" onClick={convert}>
         Download
       </Button>
-    </div>
+    </>
   );
 }

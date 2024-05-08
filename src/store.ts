@@ -19,6 +19,6 @@ interface CurrentBackground {
 }
 
 export const useCurrentBgStore = create<CurrentBackground>()((set) => ({
-  currentBg: "bg-green-500",
+  currentBg: "#f1f000",
   updateBg: (newBg) => set(() => ({ currentBg: newBg })),
 }));
