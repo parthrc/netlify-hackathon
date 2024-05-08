@@ -26,13 +26,18 @@ export default function Mockups() {
   const { currentBg, updateBg } = useCurrentBgStore();
 
   // create netlify Image CDN call using edgestore url
-  const netlifyImageUrl = `https://polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}`;
+  const netlifyImageUrl = `https://polite-bienenstitch-cc3c05.netlify.app/.netlify/images?url=${imageUrl}&q=100`;
 
   return (
-    <>
+    <div className="relative w-full flex flex-col items-center gap-y-4  py-4  ">
+      <Button className=" w-fit " onClick={convert}>
+        Save Image
+      </Button>
       <div
         ref={ref}
-        className={cn(" h-[600px] flex w-full flex-col ")}
+        className={cn(
+          " h-[600px] flex w-full flex-col border-8 border-slate-200"
+        )}
         style={{ backgroundColor: currentBg }}
       >
         <div className="w-full relative">
@@ -54,9 +59,6 @@ export default function Mockups() {
           />
         </div>
       </div>
-      <Button className=" w-fit " onClick={convert}>
-        Download
-      </Button>
-    </>
+    </div>
   );
 }

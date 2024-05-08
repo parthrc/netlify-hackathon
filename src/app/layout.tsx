@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <EdgeStoreProvider>
-          <main className="bg-slate-50">{children}</main>
+          <main className="bg-slate-100">{children}</main>
         </EdgeStoreProvider>
         <Toaster position="bottom-left" />
       </body>

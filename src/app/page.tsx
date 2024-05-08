@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/footer";
 import Mockups from "@/components/mockups";
 import SelectBackground from "@/components/select-background";
 import { Button } from "@/components/ui/button";
@@ -70,7 +71,7 @@ export default function Home() {
       <div className="flex items-center gap-x-4 p-1 drop-shadow-sm gap-1">
         {/* File upload horizontal */}
         <div className=" p-4 flex flex-col gap-y-2 bg-slate-200 rounded-sm">
-          <Label htmlFor="picture">Upload picture for desktops</Label>
+          <Label htmlFor="picture">Upload your picture</Label>
           <Input type="file" id="picture" onChange={handleFileUpload} />
 
           <Button className="mt-2 w-fit" onClick={handleSubmit}>
@@ -81,6 +82,7 @@ export default function Home() {
       </div>
 
       <Mockups />
+      <Footer />
     </div>
   );
 }

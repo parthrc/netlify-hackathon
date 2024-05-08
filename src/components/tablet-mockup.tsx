@@ -23,7 +23,7 @@ export default function TabletMockup({ imageUrl, style }: TabletMockupProps) {
             src={imageUrl}
             alt="desktop-mockup"
             fill
-            className="object-fit rounded-[2rem]"
+            className="object-contain rounded-[2rem]"
           />
         </div>
       </div>
