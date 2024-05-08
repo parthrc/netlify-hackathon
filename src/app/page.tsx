@@ -1,6 +1,7 @@
 "use client";
 
 import Mockups from "@/components/mockups";
+import SelectBackground from "@/components/select-background";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -76,14 +77,7 @@ export default function Home() {
             Upload
           </Button>
         </div>
-        <div className=" p-4 flex flex-col gap-y-2 bg-slate-200 rounded-sm">
-          <Label htmlFor="picture">Change background</Label>
-          <Input type="file" id="picture" onChange={handleFileUpload} />
-
-          <Button className="mt-2 w-fit" onClick={handleSubmit}>
-            Upload
-          </Button>
-        </div>
+        <SelectBackground />
       </div>
 
       <Mockups />
